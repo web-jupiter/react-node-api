@@ -1,0 +1,486 @@
+@import 'hamburgers/hamburgers';
+@import 'trip.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  @media screen and (max-width: 1220px) {
+    font-size: 14px;
+  }
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+
+  @media screen and (max-width: 768px) {
+    width: 100px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  outline: none;
+  display: none;
+  z-index: 100;
+
+  @media screen and (max-width: 665px) {
+    display: inline-block;
+  }
+}
+
+.react-formik-ui .form-element {
+  .label,
+  label {
+    color: #808080;
+  }
+
+  &.dropzone {
+    background-origin: padding-box;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+
+  &.dropzone .dropzone-wrapper .dropzone {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &.profile-pic {
+      width: 200px;
+      height: 200px;
+    }
+    &.loaded {
+      background-color: transparent;
+
+      .img-thumbnail {
+        border: 2px solid #ffffff;
+      }
+
+      & p.text {
+        color: #f7eeee;
+        text-shadow: 1px 1px #808080;
+      }
+    }
+  }
+
+  &.dropzone .dropzone-wrapper .dropzone p {
+    background-color: rgba(240, 240, 240, 0.2);
+  }
+
+  & .dropzone-wrapper .dropzone .img-thumbnail {
+    width: 100%;
+  }
+
+  & .checkbox-wrapper .checkbox-input-wrapper {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-end;
+  }
+
+  & .checkbox-wrapper .checkbox-input-wrapper input[type='checkbox'] {
+    outline: none;
+    position: absolute;
+    opacity: 0;
+
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    & + label::before {
+      content: '';
+      margin-right: 8px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 18px;
+      height: 17px;
+      border: 1px solid #ccc;
+    }
+
+    &:checked + label::before {
+      background: #108028;
+    }
+
+    &:checked + label::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      background: #fff;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 #fff, 4px 0 0 #fff, 4px -2px 0 #fff, 4px -4px 0 #fff,
+        4px -6px 0 #fff, 4px -8px 0 #fff;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.signup {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+
+  @media screen and (max-width: 576px) {
+    justify-content: center;
+  }
+
+  &__welcome {
+    width: 65%;
+    position: relative;
+    background-size: cover;
+    background-position: top left;
+
+    @media screen and (max-width: 768px) {
+      width: 45%;
+    }
+
+    @media screen and (max-width: 576px) {
+      width: 0;
+    }
+  }
+
+  &__text-block {
+    text-align: center;
+    font-size: 1.8em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 576px) {
+      display: none;
+    }
+
+    &--white {
+      color: #ffffff;
+    }
+
+    & > div {
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 5em;
+
+  @media screen and (max-width: 576px) {
+    padding: 1.5em;
+  }
+
+  &__title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0.67em 0;
+    line-height: 1.45;
+
+    &--sm {
+      font-size: 1.4em;
+      font-weight: 500;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid #a09f9f;
+    outline: none;
+    padding: 0.3em 0.6em;
+    margin-bottom: 0.9em;
+    font-size: 14px;
+    width: 100%;
+
+    &::placeholder {
+      color: #808080;
+    }
+  }
+
+  &__fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 970px) {
+      display: block;
+    }
+
+    & > .col {
+      flex: 0 0 45%;
+
+      @media screen and (max-width: 1140px) {
+        flex: 0 0 49%;
+      }
+
+      .textarea {
+        height: 60%;
+
+        & .label {
+          color: #808080;
+        }
+
+        & .form__textarea,
+        & .textarea-wrapper {
+          height: 100%;
+        }
+      }
+
+      &--ext {
+        .textarea {
+          height: auto;
+        }
+
+        & .form__textarea,
+        & .textarea-wrapper {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__select {
+    color: #808080;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 0.35em 0.6em;
+
+    option {
+      color: #808080;
+    }
+  }
+
+  &__image-select {
+    position: relative;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    .checkbox {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__textarea {
+    width: 100%;
+    border-color: #a09f9f;
+    padding: 0.35em 0.6em;
+    outline: none;
+  }
+
+  &__submit-btn {
+    color: #ffffff;
+    background-color: rgb(48, 48, 48);
+    border: none;
+    border-radius: 1em;
+    padding: 0.3em 1.2em;
+    cursor: pointer;
+  }
+}
+
+.trip {
+  &__page {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    @media screen and (max-width: 665px) {
+      display: block;
+    }
+
+    & .form {
+      flex: 0 0 75%;
+    }
+  }
+
+  &__sidebar {
+    margin-top: 3em;
+    flex: 0 0 25%;
+    padding: 0.4em 0 0.4em 3em;
+    border-right: 2px solid #000000;
+
+    @media screen and (max-width: 768px) {
+      padding: 0.4em 0 0.4em 1em;
+    }
+
+    @media screen and (max-width: 665px) {
+      margin: 0;
+      padding: 3em 2.5em;
+      position: absolute;
+      z-index: 15;
+      left: -999999px;
+      top: 0;
+      height: 100%;
+      // border: none;
+      background-color: #ffffff;
+      box-shadow: 2px 2px 5px rgba(40, 40, 40, 0.7);
+      transition: all 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &.is-visible {
+        left: 0px;
+        transition: all 0.17s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+    }
+
+    &-title {
+      padding-right: 1em;
+    }
+
+    &-navigation {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .nav {
+        &__item {
+          margin: 0.6em 0;
+          padding: 0;
+        }
+
+        &__link {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          padding: 0.8em;
+
+          &.active {
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 10px 0 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__block {
+    margin-top: 3em;
+    padding: 0.3em 0.5em;
+
+    @media screen and (max-width: 665px) {
+      margin: 0;
+      min-height: 100vh;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    &-title {
+      text-align: center;
+    }
+
+    &-item {
+      flex: 0 0 25%;
+      margin: 0.4em 0.5em;
+      padding: 0.3em 0.4em;
+      border: 1px solid #808080;
+      border-radius: 5px;
+      box-shadow: 1px 2px rgba(40, 40, 40, 0.3);
+      flex-direction: column;
+
+      @media screen and (max-width: 665px) {
+        flex: 0 0 45%;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      &__image {
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.add-btn {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+  color: #808080;
+  text-decoration: underline;
+}
+
+.remove-img__btn {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #cccccc;
+  background: rgba(3, 109, 3, 0.5);
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+
+  &:hover {
+    background: rgba(13, 74, 13, 1);
+  }
+}
+
+// .active-trip{
+//   // border: 5px solid red;
+//   // border-radius: 25px
+// }

@@ -1,0 +1,57 @@
+.custom-ui {
+    text-align: center;
+    width: 500px;
+    padding: 40px;
+    background: #ffffff;
+    border: 5px solid black;
+    border-radius: 25px;
+    box-shadow: 0 20px 75px rgba(0, 0, 0, 0.23);
+    color: #000000;
+    button {
+        width: 160px;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        margin: 10px;
+        cursor: pointer;
+        background: black;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+.trip-ui {
+    button {
+        width: 50%;
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        background: black;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+// .active-trip{
+//     border: 5px solid red;
+//     border-radius: 25px
+// }
+
+.alert{
+    border-radius: 5px;
+    padding:7px;
+}
+.pass{
+    border: 1px solid #00ff37;
+    
+    background: #85ffbc;
+    color: #00ff37;
+}
+.warn{
+    border: 1px solid #ff0000;
+    
+    background: #ffcbcb;
+    color: #ff0000;
+}

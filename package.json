@@ -1,0 +1,44 @@
+{
+  "name": "adventuretriprui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "file-loader": "^4.2.0",
+    "formik": "^1.5.8",
+    "node-sass": "^4.12.0",
+    "normalize.css": "^8.0.1",
+    "query-string": "^6.8.2",
+    "react": "^16.9.0",
+    "react-confirm-alert": "^2.4.1",
+    "react-dom": "^16.9.0",
+    "react-formik-ui": "^3.0.20",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.0",
+    "react-validation": "^3.0.7",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
